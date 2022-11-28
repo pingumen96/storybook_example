@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "storybook-addon-knobs-color-options": "^6.2.0-rc.2"
+  }
+}

@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #EDEDED;
+    padding: 8px;
+    max-width: 240px;
+}
+
+.card button {
+    background-color: #0A84FF;
+    color: #FFFFFF;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.card small::before {
+    content: "$";
+}
