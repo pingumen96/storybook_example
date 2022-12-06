@@ -1,21 +1,36 @@
+import ProductListItem from "../ProductListItem/ProductListItem";
+
 export const statusTypes = {
-    loading : 'loading',
-    errored : 'errored',
-    loaded : 'loaded'
+    loading: 'loading',
+    errored: 'errored',
+    loaded: 'loaded'
 }
 
-export default function ProductList({
-    status, ...otherProps
-}) {
-    if(status === statusTypes.loading) {
+const Loading = () => <span>Loading</span>;
+const Error = ({ message }) => <span>An error has occurred! {message}</span>;
+
+export default function ProductList({ status, data, onAddToCart }) {
+    if (status === statusTypes.loading) {
         return <Loading />;
     }
 
-    if(status === statusTypes.errored) {
-        return <Error message="Failed to load data"/>;
+    if (status === statusTypes.errored) {
+        return <Error message="Failed to load data" />;
     }
 
-    return // ...
+    return data.map((item) => (
+        <ProductListItem
+            key={item.id}
+            name={item.name}
+            price={item.price}
+            onAddToCart={() => {
+                onAddToCart(item.id);
+            }}
+            imageUrl={item.imageUrl}
+        />
+    ));
 }
 
-// problema, non deve verificarsi il caso in cui isLoading e hasError siano entrambi true
+ProductList.defaultProps = {
+    status: statusTypes.loading,
+};

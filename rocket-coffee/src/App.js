@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter, Link } from 'react-router-dom'
+import './Mock.server'
+import Routes from './Routes'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const Navigation = ({ onChangeNavigation }) => {
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <Link to="home">Home</Link>
+                </li>
+                <li>
+                    <Link to="about">About</Link>
+                </li>
+            </ul>
+        </nav>
+    )
 }
 
-export default App;
+export default function App() {
+    return (
+        <Routes/>
+    )
+}
