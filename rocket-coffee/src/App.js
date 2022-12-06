@@ -1,6 +1,6 @@
-import { BrowserRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Mock.server'
-import Routes from './Routes'
+import MyRoutes from './MyRoutes'
 
 export const Navigation = ({ onChangeNavigation }) => {
     return (
@@ -19,6 +19,6 @@ export const Navigation = ({ onChangeNavigation }) => {
 
 export default function App() {
     return (
-        <Routes/>
+        <MyRoutes/>
     )
 }

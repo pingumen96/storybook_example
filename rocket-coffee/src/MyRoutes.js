@@ -1,20 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/patterns/Navigation/Navigation';
 
 import Cart from './screens/Cart/Cart';
 import Products from './screens/Products/Products';
 import UserProfile from './screens/UserProfile/UserProfile';
 
-export default function Routes() {
+export default function MyRoutes() {
     return (
         <BrowserRouter>
             <Navigation/>
-            <Switch>
+            <Routes>
                 <Route path="/cart" component={Cart}/>
                 <Route path="/userProfile" component={UserProfile}/>
                 <Route path="/" component={Products}/>
-            </Switch>
+            </Routes>
         </BrowserRouter>
     );
 }
