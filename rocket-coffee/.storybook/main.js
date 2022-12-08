@@ -9,6 +9,7 @@ module.exports = {
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
     "storybook-addon-knobs-color-options",
+    "@storybook/addon-docs"
   ],
   "framework": "@storybook/react",
   "core": {
